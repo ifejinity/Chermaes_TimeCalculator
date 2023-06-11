@@ -32,6 +32,7 @@ for(let i = 0; i <= 60; i++){
 
 const compute = document.querySelector("#compute");
 const from = document.querySelector("#from");
+const textTime = document.querySelector("#texttime");
 compute.addEventListener('click', function(){
     // Create a new Date object
     var initialTime = new Date();
@@ -68,6 +69,14 @@ compute.addEventListener('click', function(){
     // console.log(updatedTimeString);
 
     // display the updated time on textarea
-    const textTime = document.querySelector("#texttime");
     textTime.value = updatedTimeString;
 });
+
+const reset = document.querySelector("#reset")
+reset.addEventListener('click', function(){
+    fromHours.value = 1;
+    fromMin.value = 0;
+    addHours.value = 0;
+    addMins.value = 0;
+    textTime.value = "";
+})
