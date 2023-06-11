@@ -22,7 +22,7 @@
         <span></span>
     </section>
     <div class="w-full flex justify-center h-screen items-center overflow-y-scroll">
-        <div class="flex w-fit h-fit bg-rose-50 rounded-xl drop-shadow-xl overflow-clip mx-[5%] flex-col md:flex-row">
+        <div class="flex w-fit bg-rose-50 rounded-xl drop-shadow-xl overflow-clip mx-[5%] flex-col md:flex-row">
             <div class="md:w-[60%] w-full flex flex-col gap-5 p-5">
                 <div class="flex flex-col gap-2">
                     <p>From</p>
@@ -43,49 +43,19 @@
                         <select class="select select-secondary w-fit" id="addMins"></select>
                     </div>
                 </div>
-                <textarea class="textarea textarea-bordered resize-none" placeholder="" readonly></textarea>
-                <button class="btn btn-neutral">Compute</button>
+                <textarea class="textarea textarea-bordered resize-none text-2xl text-center" placeholder="" readonly id="texttime"></textarea>
+                <div class="flex gap-2">
+                    <button class="btn btn-neutral w-1/2" id="compute">Compute</button>
+                    <button class="btn btn-active btn-secondary w-1/2">Reset</button>
+                </div>
             </div>
             <div class="md:w-[40%] w-full bg-rose-200 flex justify-center items-center">
-                <img src="./src/resources/cat.png" alt="" srcset="" class="max-w-xs">
+                <img src="./src/resources/cat.png" alt="" srcset="" class="md:max-w-xs max-w-[150px]">
             </div>
         </div>
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        const fromHours = document.querySelector("#fromHours");
-        for(let i = 0; i <= 12; i++){
-            const newElement = document.createElement('option');
-            newElement.innerHTML = `${i}`;
-            newElement.value = `${i}`;
-            fromHours.appendChild(newElement);
-        }
-
-        const fromMin = document.querySelector("#fromMins");
-        for(let i = 0; i <= 60; i++){
-            const newElement = document.createElement('option');
-            newElement.innerHTML = `${i}`;
-            newElement.value = `${i}`;
-            fromMin.appendChild(newElement);
-        }
-
-        const addHours = document.querySelector("#addHours");
-        for(let i = 0; i <= 12; i++){
-            const newElement = document.createElement('option');
-            newElement.innerHTML = `${i}`;
-            newElement.value = `${i}`;
-            addHours.appendChild(newElement);
-        }
-
-        const addMins = document.querySelector("#addMins");
-        for(let i = 0; i <= 60; i++){
-            const newElement = document.createElement('option');
-            newElement.innerHTML = `${i}`;
-            newElement.value = `${i}`;
-            addMins.appendChild(newElement);
-        }
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
