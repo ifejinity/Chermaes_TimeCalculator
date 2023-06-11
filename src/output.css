@@ -522,10 +522,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.absolute {
-  position: absolute;
-}
-
 .mx-\[5\%\] {
   margin-left: 5%;
   margin-right: 5%;
@@ -613,6 +609,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.font-outfit {
+  font-family: Outfit, sans-serif;
 }
 
 .text-2xl {
