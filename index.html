@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chermae's Time Calculator</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.0.25/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-rose-500">
+    <section>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </section>
+    <div class="w-full flex justify-center h-screen items-center overflow-y-scroll">
+        <div class="flex w-fit h-fit bg-rose-50 rounded-xl drop-shadow-xl overflow-clip mx-[5%] flex-col md:flex-row">
+            <div class="md:w-[60%] w-full flex flex-col gap-5 p-5">
+                <div class="flex flex-col gap-2">
+                    <p>From</p>
+                    <div class="flex gap-5">
+                        <select class="select select-secondary w-fit" id="fromHours"></select>
+                        <select class="select select-secondary w-fit" id="fromMins"></select>
+                        <select class="select select-secondary w-fit" id="from">
+                            <option value="pm">PM</option>
+                            <option value="am">AM</option>
+    
+                        </select>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p>Add time</p>
+                    <div class="flex gap-5">
+                        <select class="select select-secondary w-fit" id="addHours"></select>
+                        <select class="select select-secondary w-fit" id="addMins"></select>
+                    </div>
+                </div>
+                <textarea class="textarea textarea-bordered resize-none" placeholder="" readonly></textarea>
+                <button class="btn btn-neutral">Compute</button>
+            </div>
+            <div class="md:w-[40%] w-full bg-rose-200 flex justify-center items-center">
+                <img src="./src/resources/cat.png" alt="" srcset="" class="max-w-xs">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        const fromHours = document.querySelector("#fromHours");
+        for(let i = 0; i <= 12; i++){
+            const newElement = document.createElement('option');
+            newElement.innerHTML = `${i}`;
+            newElement.value = `${i}`;
+            fromHours.appendChild(newElement);
+        }
+
+        const fromMin = document.querySelector("#fromMins");
+        for(let i = 0; i <= 60; i++){
+            const newElement = document.createElement('option');
+            newElement.innerHTML = `${i}`;
+            newElement.value = `${i}`;
+            fromMin.appendChild(newElement);
+        }
+
+        const addHours = document.querySelector("#addHours");
+        for(let i = 0; i <= 12; i++){
+            const newElement = document.createElement('option');
+            newElement.innerHTML = `${i}`;
+            newElement.value = `${i}`;
+            addHours.appendChild(newElement);
+        }
+
+        const addMins = document.querySelector("#addMins");
+        for(let i = 0; i <= 60; i++){
+            const newElement = document.createElement('option');
+            newElement.innerHTML = `${i}`;
+            newElement.value = `${i}`;
+            addMins.appendChild(newElement);
+        }
+    </script>
+</body>
+</html>
