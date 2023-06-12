@@ -12,6 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-rose-500 font-outfit">
+    <div class="fixed w-full h-screen justify-center items-center bg-black/30 z-[2] hidden" id="modalUnable">
+        <div class="card w-96 bg-base-100 shadow-xl mx-[5%]">
+            <div class="card-body">
+              <h2 class="card-title">Unable to compute</h2>
+              <p>Please complete the form before clicking the compute button!</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-secondary" id="btnUnable">Okay</button>
+              </div>
+            </div>
+          </div>
+    </div>
     <section>
         <span></span>
         <span></span>
@@ -30,20 +41,28 @@
                 <div class="flex flex-col gap-2">
                     <p>From</p>
                     <div class="flex gap-5">
-                        <select class="select select-secondary w-fit" id="fromHours"></select>
-                        <select class="select select-secondary w-fit" id="fromMins"></select>
+                        <select class="select select-secondary w-fit" id="fromHours">
+                            <option disabled selected value="no">HH</option>
+                        </select>
+                        <select class="select select-secondary w-fit" id="fromMins">
+                            <option disabled selected value="no">MM</option>
+                        </select>
                         <select class="select select-secondary w-fit" id="from">
+                            <option disabled selected value="non">XM</option>
                             <option value="pm">PM</option>
                             <option value="am">AM</option>
-    
                         </select>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
                     <p>Add time</p>
                     <div class="flex gap-5">
-                        <select class="select select-secondary w-fit" id="addHours"></select>
-                        <select class="select select-secondary w-fit" id="addMins"></select>
+                        <select class="select select-secondary w-fit" id="addHours">
+                            <option disabled selected value="no">HH</option>
+                        </select>
+                        <select class="select select-secondary w-fit" id="addMins">
+                            <option disabled selected value="no">MM</option>
+                        </select>
                     </div>
                 </div>
                 <textarea class="textarea textarea-bordered resize-none text-2xl text-center" placeholder="" readonly id="texttime"></textarea>
